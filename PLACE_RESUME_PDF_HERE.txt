@@ -1,0 +1,9 @@
+IMPORTANT: Place your resume.pdf file in this public folder
+
+The file should be named exactly: resume.pdf
+
+Once you add the PDF file here, users will be able to download it by clicking the "Download Resume PDF" button on your website.
+
+This file will be accessible at:
+- During development: http://localhost:3000/resume.pdf
+- On GitHub Pages: https://arnavsinha717.github.io/portfolio/resume.pdf
