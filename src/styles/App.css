@@ -1,0 +1,39 @@
+.App {
+  min-height: 100vh;
+  position: relative;
+  background: var(--bg-primary);
+}
+
+/* Smooth scrolling for sections */
+section {
+  position: relative;
+  z-index: 2;
+}
+
+/* Print styles for resume */
+@media print {
+  .navbar,
+  .hero,
+  .about,
+  .projects,
+  .contact,
+  .particle-background,
+  .download-btn {
+    display: none !important;
+  }
+
+  .resume {
+    padding: 0 !important;
+  }
+
+  .resume-content {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+
+  * {
+    color: black !important;
+    background: white !important;
+  }
+}
