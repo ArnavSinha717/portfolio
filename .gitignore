@@ -30,3 +30,11 @@ yarn-error.log*
 index.html
 main.js
 style.css
+
+# Claude/AI
+CLAUDE.md
+*.claude
+
+# Documentation (keep README only)
+CHANGELOG.md
+CONTRIBUTING.md

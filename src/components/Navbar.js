@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
 import '../styles/Navbar.css';
@@ -6,6 +7,7 @@ import '../styles/Navbar.css';
 const Navbar = ({ theme, toggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,15 +18,18 @@ const Navbar = ({ theme, toggleTheme }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = ['Home', 'About', 'Resume', 'Projects', 'Contact'];
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
 
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId.toLowerCase());
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      setMobileMenuOpen(false);
-    }
-  };
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Resume', path: '/resume' },
+    { name: 'Contact', path: '/contact' },
+  ];
 
   return (
     <motion.nav
@@ -34,26 +39,31 @@ const Navbar = ({ theme, toggleTheme }) => {
       transition={{ duration: 0.5 }}
     >
       <div className="nav-container">
-        <motion.div
-          className="nav-logo"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          AS
-        </motion.div>
+        <Link to="/" className="nav-logo-link">
+          <motion.div
+            className="nav-logo"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            AS
+          </motion.div>
+        </Link>
 
         <div className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           {navItems.map((item, index) => (
-            <motion.a
-              key={item}
-              onClick={() => scrollToSection(item)}
+            <motion.div
+              key={item.name}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -2 }}
             >
-              {item}
-            </motion.a>
+              <Link
+                to={item.path}
+                className={location.pathname === item.path ? 'active' : ''}
+              >
+                <span>{item.name}</span>
+              </Link>
+            </motion.div>
           ))}
         </div>
 

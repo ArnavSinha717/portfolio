@@ -14,6 +14,7 @@ const Resume = () => {
     {
       title: "LipReading Model",
       tech: "Python • TensorFlow • OpenCV • Deep Learning • Computer Vision",
+      description: "An AI that watches videos of people speaking and figures out what they're saying just by looking at their lips.",
       points: [
         "Developing end-to-end deep learning pipeline using 3D CNNs and BiLSTM networks for lip reading",
         "Implemented sophisticated video preprocessing with frame normalization and temporal alignment",
@@ -24,6 +25,7 @@ const Resume = () => {
     {
       title: "The Blinking Worlds",
       tech: "Godot • GDScript • Game Design • 2D Graphics",
+      description: "A puzzle video game where you switch between two parallel worlds by blinking to solve challenges.",
       points: [
         "Developed a 2D puzzle-platformer game with unique blinking mechanics in Godot Engine",
         "Created parallel world navigation system with challenging spatial puzzles",
@@ -34,6 +36,7 @@ const Resume = () => {
     {
       title: "ClauseWise - Legal Document AI Assistant",
       tech: "Python • FastAPI • Streamlit • RAG • Google Gemini • ChromaDB",
+      description: "A chatbot that reads legal documents and answers questions about them in plain language, supporting 13 Indian languages.",
       points: [
         "Built full-stack AI-powered legal document analysis platform with multi-language support",
         "Implemented RAG pipeline with ChromaDB vector store and HuggingFace embeddings",
@@ -44,6 +47,7 @@ const Resume = () => {
     {
       title: "Cowwnect",
       tech: "Python • TensorFlow • Transfer Learning • Computer Vision • Mobile",
+      description: "A mobile app that identifies cow breeds by taking a photo, designed to help Indian farmers.",
       points: [
         "Developed cow breed classification system using EfficientNetB3 with transfer learning",
         "Deployed via TensorFlow Lite for offline mobile use on Android devices",
@@ -54,6 +58,7 @@ const Resume = () => {
     {
       title: "Customer Churn Prediction",
       tech: "Python • scikit-learn • Pandas • Machine Learning",
+      description: "A system that predicts which customers are likely to stop using a service so businesses can retain them.",
       points: [
         "Built end-to-end ML pipeline for customer churn prediction",
         "Engineered features and trained multiple models including XGBoost and Random Forest",
@@ -115,7 +120,7 @@ const Resume = () => {
                 <h4>B.Tech Computer Science (AI/ML)</h4>
                 <p className="institution">Vellore Institute of Technology, Vellore</p>
                 <p className="date">2023 - 2027</p>
-                <p className="detail">CGPA: 8.63/10.0</p>
+                <p className="detail">CGPA: 8.54/10.0</p>
                 <p className="coursework">Relevant Coursework: Data Structures & Algorithms, Machine Learning, Deep Learning, Computer Networks, Database Management Systems, Operating Systems</p>
               </div>
             </motion.div>
@@ -158,6 +163,7 @@ const Resume = () => {
                 >
                   <h4>{project.title}</h4>
                   <p className="tech-stack">{project.tech}</p>
+                  <p className="project-description">{project.description}</p>
                   <ul>
                     {project.points.map((point, i) => (
                       <li key={i}>{point}</li>
@@ -204,7 +210,7 @@ const Resume = () => {
                 animate={inView ? { opacity: 1 } : {}}
                 transition={{ delay: 1.2 }}
               >
-                <strong>Tools & Platforms:</strong> Git/GitHub, Docker, VS Code, Jupyter, Google Colab, Godot Engine, Linux, AWS (basics)
+                <strong>Cloud & AWS:</strong> EC2, Lambda, S3, RDS, DynamoDB, API Gateway, CloudFront, VPC, Route 53, IAM, CloudWatch, SageMaker, Cognito, SNS, SQS, ECS, Elastic Beanstalk
               </motion.div>
               <motion.div
                 className="proficiency-item"
@@ -212,7 +218,15 @@ const Resume = () => {
                 animate={inView ? { opacity: 1 } : {}}
                 transition={{ delay: 1.3 }}
               >
-                <strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, ChromaDB (Vector DB), Firebase
+                <strong>Tools & Platforms:</strong> Git/GitHub, Docker, VS Code, Jupyter, Google Colab, Godot Engine, Linux
+              </motion.div>
+              <motion.div
+                className="proficiency-item"
+                initial={{ opacity: 0 }}
+                animate={inView ? { opacity: 1 } : {}}
+                transition={{ delay: 1.4 }}
+              >
+                <strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, ChromaDB (Vector DB), Firebase, DynamoDB, RDS
               </motion.div>
             </div>
           </div>
