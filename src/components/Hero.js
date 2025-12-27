@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiDownload } from 'react-icons/fi';
 import { useInView } from 'react-intersection-observer';
@@ -89,22 +90,12 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            <motion.a
-              href="#resume"
-              className="btn btn-primary"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <Link to="/resume" className="btn btn-primary">
               <FiDownload /> View Resume
-            </motion.a>
-            <motion.a
-              href="#projects"
-              className="btn btn-secondary"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            </Link>
+            <Link to="/projects" className="btn btn-secondary">
               See My Work
-            </motion.a>
+            </Link>
           </motion.div>
 
           <motion.div
